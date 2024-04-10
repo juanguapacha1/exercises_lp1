@@ -15,8 +15,15 @@ public class Ejercicios {
      *         Los dos números son iguales.
      */
     public String ejercicio1(int num1, int num2) {
-        // Implementar solución
-        return "";
+        if (num1>num2) {
+            return "el numero mayor es: num1";
+        }
+        else if (num1<num2) {
+            return "el numero mayor es: num2";
+        }
+        else{
+            return"Los dos números son iguales";
+        }
     }
     // ----------------------------------------------------------------------------------------
 
@@ -31,10 +38,17 @@ public class Ejercicios {
      *         ¡Felicidades! Usted ha aprobado el examen.
      *         Lo siento, usted ha reprobado el examen.
      */
-    public String ejercicio2(double calificacion) {
-       // Implementar solución
-        return "";
-    }
+    public String ejercicio2(double calificacion) { 
+            if (calificacion < 0.0 || calificacion > 5.0) {
+                return "Calificación inválida";
+            } else if (calificacion >= 3.5) {
+                return "Aprobado";
+            } else {
+                return "Reprobado";
+            }
+       }
+        
+    
 
     // ----------------------------------------------------------------------------------------
 
@@ -49,8 +63,14 @@ public class Ejercicios {
      *         basado en el precio de entrada.           
      */
     public double ejercicio3(double precio) {
-        // Implementar solución
-        return 0;
+        if (precio>=50000) {
+            double descuento = precio*0.10;
+            precio = precio-descuento;
+            return precio;
+        }
+        else{
+            return precio;
+        }
     }
 
     // ----------------------------------------------------------------------------------------
@@ -81,8 +101,23 @@ public class Ejercicios {
      */
     public String ejercicio4(int tipoFigura, double ladoCuadrado, double baseTriangulo, double alturaTriangulo,
             double radioCirculo) {
-        // Implementar solución
-        return "";
+        switch (tipoFigura) {
+            case 1:
+                double areaCuadrado = ladoCuadrado * ladoCuadrado;
+                return "El area del cuadrado es: "+ areaCuadrado;
+                
+            case 2:
+                double areaTriangulo = baseTriangulo * alturaTriangulo / 2;
+                return "El area del triangulo es: " + areaTriangulo;
+            
+            case 3:
+                double areaCirculo = Math.PI * Math.pow(radioCirculo, 2 );
+               return "El area del circulo es: " + areaCirculo;
+            
+            default: 
+                return"seleccion invalida";
+
+        }
     }
 
     // ----------------------------------------------------------------------------------------
@@ -98,7 +133,12 @@ public class Ejercicios {
      *         `num2` y `num3`.
      */
     public int ejercicio5(int num1, int num2, int num3) {
-        // Implementar solución
-        return 0;
+            if (num1 <= num2 && num1 <= num3) {
+                return num1;
+            } else if (num2 <= num1 && num2 <= num3) {
+                return num2;
+            } else {
+                return num3;
+            }
     }
 }
